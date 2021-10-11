@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Shop" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1236,3400" sap2010:WorkflowViewState.IdRef="Shop_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Shop" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1236,3524" sap2010:WorkflowViewState.IdRef="Shop_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
@@ -36,7 +36,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -65,27 +65,29 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Shop" sap:VirtualizedContainerService.HintSize="965,3295" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Shop" sap:VirtualizedContainerService.HintSize="965,3419" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="923,3203" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="../../p0\Vendors p0.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="923,3327" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="../../p0\Vendors p0.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="889,3094" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="889,3218" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="shoppingList" />
               <Variable x:TypeArguments="sd:DataTable" Name="inventory" />
               <Variable x:TypeArguments="sc:Hashtable" Default="[new HashTable()]" Name="clientExpenses" />
               <Variable x:TypeArguments="x:Int32" Name="i" />
               <Variable x:TypeArguments="sd:DataTable" Name="unavailableStock" />
+              <Variable x:TypeArguments="sd:DataTable" Name="inventoryItems" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -319,6 +321,7 @@
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
             <ui:ExcelWriteRange AddHeaders="False" DataTable="[inventory]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="847,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Inventory" StartingCell="A2" />
+            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="847,22" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_2" Range="A2:Z100" SheetName="Items Not Found" ShiftCells="False" ShiftOption="ShiftUp" />
             <ui:ExcelWriteRange AddHeaders="False" DataTable="[unavailableStock]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="847,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Items Not Found" StartingCell="A2" />
             <Assign sap:VirtualizedContainerService.HintSize="847,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
@@ -328,6 +331,7 @@
                 <InArgument x:TypeArguments="x:Int32">2</InArgument>
               </Assign.Value>
             </Assign>
+            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="847,22" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A2:Z100" SheetName="Expenses" ShiftCells="False" ShiftOption="ShiftUp" />
             <ui:ForEach x:TypeArguments="sc:DictionaryEntry" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="847,539" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[clientExpenses]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="sc:DictionaryEntry">

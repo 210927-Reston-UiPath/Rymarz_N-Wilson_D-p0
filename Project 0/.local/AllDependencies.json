@@ -3500,15 +3500,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WebbP\\.nuget\\packages\\": {}
+    "C:\\Users\\nryma\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Project 0",
       "projectName": "Project 0",
-      "projectPath": "C:\\revature\\p00\\Project 0\\.local",
-      "packagesPath": "C:\\Users\\WebbP\\.nuget\\packages\\",
-      "outputPath": "C:\\revature\\p00\\Project 0\\.local"
+      "projectPath": "C:\\Revature\\Rymarz_N-Wilson_D-p0\\Project 0\\.local",
+      "packagesPath": "C:\\Users\\nryma\\.nuget\\packages\\",
+      "outputPath": "C:\\Revature\\Rymarz_N-Wilson_D-p0\\Project 0\\.local"
     },
     "frameworks": {
       "net461": {

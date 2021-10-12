@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="order_flow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="667.2,800" sap2010:WorkflowViewState.IdRef="order_flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="order_flow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1236,839" sap2010:WorkflowViewState.IdRef="order_flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -64,7 +64,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap:VirtualizedContainerService.HintSize="677.6,695.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap:VirtualizedContainerService.HintSize="1084,734" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="customerName" />
       <Variable x:TypeArguments="x:String" Name="item1" />
@@ -74,11 +74,11 @@
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.7 290,77.7 290,103.6</av:PointCollection>
-        <x:Double x:Key="Width">644</x:Double>
-        <x:Double x:Key="Height">658.4</x:Double>
+        <av:Point x:Key="ShapeLocation">490,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">520,77.5 520,94.5</av:PointCollection>
+        <x:Double x:Key="Width">1050</x:Double>
+        <x:Double x:Key="Height">698</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -87,12 +87,12 @@
     <FlowStep x:Name="__ReferenceID0">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">190,103.6</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">190,130 160,130 160,186.4 280,186.4 280,216.4</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">420,94.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">520,145.5 520,196.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="what would you like to do?" OptionsString="New customer;New order;New vendor;New vendor stock" Title="Getting Started">
+      <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="what would you like to do?" OptionsString="New customer;New order;New vendor;New vendor stock" Title="Getting Started">
         <ui:InputDialog.Result>
           <OutArgument x:TypeArguments="x:String">[startProcess]</OutArgument>
         </ui:InputDialog.Result>
@@ -103,26 +103,26 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InputDialog>
       <FlowStep.Next>
-        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID1" DisplayName="Flow Switch" Expression="[startProcess.Trim()]" sap:VirtualizedContainerService.HintSize="70.4,87.2" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_2">
+        <FlowSwitch x:TypeArguments="x:String" x:Name="__ReferenceID1" DisplayName="Flow Switch" Expression="[startProcess.Trim()]" sap:VirtualizedContainerService.HintSize="70,87" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">244.8,216.4</av:Point>
-              <av:Size x:Key="ShapeSize">70.4,87.2</av:Size>
-              <av:PointCollection x:Key="New customerConnector">262.4,216.4 262.4,186.4 110,186.4 110,245.6</av:PointCollection>
-              <av:PointCollection x:Key="New orderConnector">315.2,238.2 330,238.2 330,355.6 270,355.6 270,385.6</av:PointCollection>
-              <av:PointCollection x:Key="New vendorConnector">280,303.6 280,333.6 220,333.6 220,186.4 520,186.4 520,285.6</av:PointCollection>
-              <av:PointCollection x:Key="New vendor stockConnector">315.2,260 345.2,260 345.2,375.6 520,375.6 520,405.6</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">485,196.5</av:Point>
+              <av:Size x:Key="ShapeSize">70,87</av:Size>
+              <av:PointCollection x:Key="New customerConnector">502.5,196.5 502.5,166.5 170,166.5 170,197</av:PointCollection>
+              <av:PointCollection x:Key="New orderConnector">555,218.25 670,218.25 670,407</av:PointCollection>
+              <av:PointCollection x:Key="New vendorConnector">520,283.5 520,313.5 220,313.5 220,427</av:PointCollection>
+              <av:PointCollection x:Key="New vendor stockConnector">555,240 650,240 650,60 840,60 840,77</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowStep x:Key="New customer" x:Name="__ReferenceID2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">10,245.6</av:Point>
-                <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">210,280 240,280 240,186.4 290,186.4 290,156.4</av:PointCollection>
+                <av:Point x:Key="ShapeLocation">70,197</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">70,230 40,230 40,120 420,120</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="New customer" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="New customer" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,12 +141,12 @@
           <FlowStep x:Key="New vendor" x:Name="__ReferenceID3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">420,285.6</av:Point>
-                <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">420,320 362.8,320 362.8,217.64 290,217.64 290,156.4</av:PointCollection>
+                <av:Point x:Key="ShapeLocation">120,427</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">120,460 90,460 90,397 390,397 390,120 420,120</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="New vendor" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="New vendor" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="newVendor" />
               </Sequence.Variables>
@@ -168,11 +168,11 @@
           <FlowStep x:Key="New order" x:Name="__ReferenceID4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">170,385.6</av:Point>
-                <av:Size x:Key="ShapeSize">200,68.8</av:Size>
+                <av:Point x:Key="ShapeLocation">570,407</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="New order" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="New order" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,11 +188,12 @@
           <FlowStep x:Key="New vendor stock" x:Name="__ReferenceID5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">420,405.6</av:Point>
-                <av:Size x:Key="ShapeSize">200,68.8</av:Size>
+                <av:Point x:Key="ShapeLocation">740,77</av:Point>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">740,110 710,110 710,120 620,120</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap:VirtualizedContainerService.HintSize="375.2,1379.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="variable1" />
                 <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="vendors" />
@@ -250,6 +251,9 @@
                 </ui:InputDialog.Result>
               </ui:InputDialog>
             </Sequence>
+            <FlowStep.Next>
+              <x:Reference>__ReferenceID0</x:Reference>
+            </FlowStep.Next>
           </FlowStep>
         </FlowSwitch>
       </FlowStep.Next>

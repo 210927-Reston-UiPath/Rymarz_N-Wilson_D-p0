@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Shop" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1236,3524" sap2010:WorkflowViewState.IdRef="Shop_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Shop" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="950.4,3428" sap2010:WorkflowViewState.IdRef="Shop_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
       <x:String>System.Activities</x:String>
@@ -36,7 +36,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -65,57 +65,55 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Shop" sap:VirtualizedContainerService.HintSize="965,3419" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Shop" sap:VirtualizedContainerService.HintSize="960.8,3323.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="923,3327" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="../../p0\Vendors p0.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="919.2,3230.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="../../p0\Vendors p0.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="889,3218" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="885.6,3120.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Name="shoppingList" />
               <Variable x:TypeArguments="sd:DataTable" Name="inventory" />
               <Variable x:TypeArguments="sc:Hashtable" Default="[new HashTable()]" Name="clientExpenses" />
               <Variable x:TypeArguments="x:Int32" Name="i" />
               <Variable x:TypeArguments="sd:DataTable" Name="unavailableStock" />
-              <Variable x:TypeArguments="sd:DataTable" Name="inventoryItems" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[inventory]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="847,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Inventory">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[inventory]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="844,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Inventory">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[shoppingList]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="847,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Shopping List">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[shoppingList]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="844,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Shopping List">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:BuildDataTable DataTable="[unavailableStock]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="847,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Client&quot; msdata:Caption=&quot;&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Unaccounted_x0020_Quantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[shoppingList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="847,1772" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:BuildDataTable DataTable="[unavailableStock]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="844,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Client&quot; msdata:Caption=&quot;&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Unaccounted_x0020_Quantity&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[shoppingList]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="844,1788.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="797,1625" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="794.4,1640" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="itemRow" />
                       <Variable x:TypeArguments="x:Double" Name="stock" />
@@ -132,7 +130,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="755,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="752.8,161.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -162,10 +160,10 @@
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[inventory]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="755,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Item" LookupValue="[clientItem]" RowIndex="[itemRow]" />
-                    <If Condition="[ItemRow &gt; -1]" sap:VirtualizedContainerService.HintSize="755,423" sap2010:WorkflowViewState.IdRef="If_7">
+                    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[inventory]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="752.8,22.4" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Item" LookupValue="[clientItem]" RowIndex="[itemRow]" />
+                    <If Condition="[ItemRow &gt; -1]" sap:VirtualizedContainerService.HintSize="752.8,427.2" sap2010:WorkflowViewState.IdRef="If_7">
                       <If.Then>
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,191" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,192.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -205,7 +203,7 @@
                         </ui:MultipleAssign>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="304,276" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence sap:VirtualizedContainerService.HintSize="304,277.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="s:Object[]" Name="arr" />
                           </Sequence.Variables>
@@ -214,7 +212,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                             <Assign.To>
                               <OutArgument x:TypeArguments="s:Object[]">[arr]</OutArgument>
                             </Assign.To>
@@ -222,14 +220,14 @@
                               <InArgument x:TypeArguments="s:Object[]">[{client, clientItem, quantity}]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[arr]" DataTable="[unavailableStock]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                          <ui:Continue sap:VirtualizedContainerService.HintSize="262,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[arr]" DataTable="[unavailableStock]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="262.4,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="262.4,22.4" sap2010:WorkflowViewState.IdRef="Continue_1" />
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[clientExpenses.containsKey(client)]" sap:VirtualizedContainerService.HintSize="755,207" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If Condition="[clientExpenses.containsKey(client)]" sap:VirtualizedContainerService.HintSize="752.8,209.6" sap2010:WorkflowViewState.IdRef="If_4">
                       <If.Else>
-                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Object">[clientExpenses(client)]</OutArgument>
                           </Assign.To>
@@ -239,9 +237,9 @@
                         </Assign>
                       </If.Else>
                     </If>
-                    <If Condition="[stock &gt;= quantity]" sap:VirtualizedContainerService.HintSize="755,461" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[stock &gt;= quantity]" sap:VirtualizedContainerService.HintSize="752.8,466.4" sap2010:WorkflowViewState.IdRef="If_3">
                       <If.Then>
-                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,129" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+                        <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                           <ui:MultipleAssign.AssignOperations>
                             <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
@@ -265,7 +263,7 @@
                         </ui:MultipleAssign>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap:VirtualizedContainerService.HintSize="376,314" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence sap:VirtualizedContainerService.HintSize="375.2,316.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="s:Object[]" Name="arr" />
                           </Sequence.Variables>
@@ -274,7 +272,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="333.6,161.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_6">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
@@ -285,6 +283,14 @@
                                     <InArgument x:TypeArguments="x:Object">[Convert.toDouble(clientExpenses(client)) + (price - price*discount)*stock]</InArgument>
                                   </ui:AssignOperation.Value>
                                 </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:Double">[stock]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:Double">0</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
                                   <ui:AssignOperation.To>
                                     <OutArgument x:TypeArguments="s:Object[]">[arr]</OutArgument>
@@ -293,22 +299,14 @@
                                     <InArgument x:TypeArguments="s:Object[]">[{client, clientItem,cdbl((stock - quantity)*-1)}]</InArgument>
                                   </ui:AssignOperation.Value>
                                 </ui:AssignOperation>
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:Double">[stock]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:Double">0</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
                               </scg:List>
                             </ui:MultipleAssign.AssignOperations>
                           </ui:MultipleAssign>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[arr]" DataTable="[unavailableStock]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[arr]" DataTable="[unavailableStock]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                         </Sequence>
                       </If.Else>
                     </If>
-                    <Assign sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign sap:VirtualizedContainerService.HintSize="752.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[inventory(itemRow)(3)]</OutArgument>
                       </Assign.To>
@@ -320,10 +318,9 @@
                 </ActivityAction>
               </ui:ForEachRow.Body>
             </ui:ForEachRow>
-            <ui:ExcelWriteRange AddHeaders="False" DataTable="[inventory]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="847,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Inventory" StartingCell="A2" />
-            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="847,22" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_2" Range="A2:Z100" SheetName="Items Not Found" ShiftCells="False" ShiftOption="ShiftUp" />
-            <ui:ExcelWriteRange AddHeaders="False" DataTable="[unavailableStock]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="847,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Items Not Found" StartingCell="A2" />
-            <Assign sap:VirtualizedContainerService.HintSize="847,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <ui:ExcelWriteRange AddHeaders="False" DataTable="[inventory]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="844,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Inventory" StartingCell="A2" />
+            <ui:ExcelWriteRange AddHeaders="False" DataTable="[unavailableStock]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="844,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Items Not Found" StartingCell="A2" />
+            <Assign sap:VirtualizedContainerService.HintSize="844,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
               </Assign.To>
@@ -331,22 +328,21 @@
                 <InArgument x:TypeArguments="x:Int32">2</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="847,22" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A2:Z100" SheetName="Expenses" ShiftCells="False" ShiftOption="ShiftUp" />
-            <ui:ForEach x:TypeArguments="sc:DictionaryEntry" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="847,539" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[clientExpenses]">
+            <ui:ForEach x:TypeArguments="sc:DictionaryEntry" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="844,543.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[clientExpenses]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="sc:DictionaryEntry">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sc:DictionaryEntry" Name="entry" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,406" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,408.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelWriteCell Cell="[&quot;A&quot; + CStr(i)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Expenses" Text="[cstr(entry.key)]" />
-                    <ui:ExcelWriteCell Cell="[&quot;B&quot; + Cstr(i)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Expenses" Text="[cstr(entry.value)]" />
-                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <ui:ExcelWriteCell Cell="[&quot;A&quot; + CStr(i)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Expenses" Text="[cstr(entry.key)]" />
+                    <ui:ExcelWriteCell Cell="[&quot;B&quot; + Cstr(i)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Expenses" Text="[cstr(entry.value)]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
                       </Assign.To>

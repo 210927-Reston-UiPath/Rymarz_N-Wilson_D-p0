@@ -273,7 +273,7 @@
                 <av:PointCollection x:Key="ConnectorLocation">70,210 40,210 40,120 420,120</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="New Customer Prompt" sap:VirtualizedContainerService.HintSize="454,2070" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="New Customer Prompt" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="items" />
                 <Variable x:TypeArguments="x:String" Name="anotherItem" />

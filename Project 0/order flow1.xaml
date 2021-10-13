@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="order_flow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1236,799" sap2010:WorkflowViewState.IdRef="order_flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="order_flow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1488,830" sap2010:WorkflowViewState.IdRef="order_flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -193,15 +193,11 @@
                 <av:PointCollection x:Key="ConnectorLocation">740,110 710,110 710,120 620,120</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap:VirtualizedContainerService.HintSize="476,2326" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap:VirtualizedContainerService.HintSize="476,2289" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="vendors" />
                 <Variable x:TypeArguments="sd:DataTable" Name="inventory" />
-                <Variable x:TypeArguments="scg:List(x:String)" Name="vendorItems">
-                  <Variable.Default>
-                    <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="new list(of string)" />
-                  </Variable.Default>
-                </Variable>
+                <Variable x:TypeArguments="scg:List(x:String)" Default="[new list(of string)]" Name="vendorItems" />
                 <Variable x:TypeArguments="sd:DataTable" Name="vendorInventory" />
                 <Variable x:TypeArguments="x:String" Name="item" />
                 <Variable x:TypeArguments="x:String" Name="Amount" />
@@ -225,7 +221,13 @@
                   <OutArgument x:TypeArguments="x:String">[order1]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
-              <ui:ReadRange AddHeaders="True" DataTable="[inventory]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" Range="A1" SheetName="Inventory" WorkbookPath="C:\Revature\Rymarz_N-Wilson_D-p0\Vendors p0.xlsx" />
+              <ui:ReadRange AddHeaders="True" DataTable="[inventory]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Inventory" WorkbookPath="C:\Revature\Rymarz_N-Wilson_D-p0\Vendors p0.xlsx">
+                <ui:ReadRange.Range>
+                  <InArgument x:TypeArguments="x:String">
+                    <Literal x:TypeArguments="x:String" Value="" />
+                  </InArgument>
+                </ui:ReadRange.Range>
+              </ui:ReadRange>
               <ui:FilterDataTable DataTable="[inventory]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[vendorInventory]" SelectColumnsMode="Keep">
                 <ui:FilterDataTable.Filters>
                   <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
@@ -272,29 +274,30 @@
                   <OutArgument x:TypeArguments="x:String">[Amount]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,486" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Revature\Rymarz_N-Wilson_D-p0\Vendors p0.xlsx">
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,449" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="C:\Revature\Rymarz_N-Wilson_D-p0\Vendors p0.xlsx">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,340" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="itemAddress" />
-                        <Variable x:TypeArguments="x:String" Name="stock" />
+                        <Variable x:TypeArguments="x:Double" Name="stock" />
+                        <Variable x:TypeArguments="x:Int32" Name="itemIndex" />
                       </Sequence.Variables>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ExcelReadColumn Result="{x:Null}" DisplayName="Read Column" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadColumn_1" SheetName="Inventory" StartingCell="A" />
-                      <ui:ExcelReadCell Cell="[&quot;D&quot; + itemAddress(1)]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Inventory">
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[inventory]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Item" LookupValue="[item]" RowIndex="[itemIndex]" />
+                      <ui:ExcelReadCell Cell="[&quot;D&quot; + cstr(itemIndex+2)]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Inventory">
                         <ui:ExcelReadCell.Result>
-                          <OutArgument x:TypeArguments="x:String">[stock]</OutArgument>
+                          <OutArgument x:TypeArguments="x:Double">[stock]</OutArgument>
                         </ui:ExcelReadCell.Result>
                       </ui:ExcelReadCell>
-                      <ui:ExcelWriteCell Cell="[&quot;D&quot;+ itemAddress(1)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Invenotry" Text="[cstr(cint(amount) + cint(stock))]" />
+                      <ui:ExcelWriteCell Cell="[&quot;D&quot;+ cstr(itemIndex+2)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Inventory" Text="[cstr(cint(amount) + cint(stock))]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:ExcelApplicationScope.Body>

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="order_flow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1236,799" sap2010:WorkflowViewState.IdRef="order_flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="order_flow" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1236,839" sap2010:WorkflowViewState.IdRef="order_flow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
@@ -146,19 +146,19 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">475,186.5</av:Point>
               <av:Size x:Key="ShapeSize">70,87</av:Size>
-              <av:PointCollection x:Key="New CustomerConnector">475,208.25 445,208.25 445,210 270,210</av:PointCollection>
+              <av:PointCollection x:Key="Add CustomerConnector">475,208.25 445,208.25 445,210 270,210</av:PointCollection>
               <av:PointCollection x:Key="Default">545,251.75 680,251.75 680,404.02</av:PointCollection>
-              <av:PointCollection x:Key="Add CustomerConnector">510,273.5 510,360 270,360</av:PointCollection>
-              <av:PointCollection x:Key="Add StockConnector">545,208.25 575,208.25 575,200 760,200</av:PointCollection>
+              <av:PointCollection x:Key="Add VendorConnector">510,273.5 510,360 270,360</av:PointCollection>
+              <av:PointCollection x:Key="Add StockConnector">545,208.25 575,208.25 575,170 690,170</av:PointCollection>
               <x:String x:Key="DefaultCaseDisplayName">Make Order</x:String>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowStep x:Key="Add Stock" x:Name="__ReferenceID6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <av:Point x:Key="ShapeLocation">760,174.5</av:Point>
+                <av:Point x:Key="ShapeLocation">690,144.5</av:Point>
                 <av:Size x:Key="ShapeSize">200,51</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">860,174.5 860,120 620,120</av:PointCollection>
+                <av:PointCollection x:Key="ConnectorLocation">790,144.5 790,120 620,120</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Add Stock Prompt workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Add Stock Prompt.xaml">
@@ -175,7 +175,7 @@
               <x:Reference>__ReferenceID0</x:Reference>
             </FlowStep.Next>
           </FlowStep>
-          <FlowStep x:Key="Add Customer" x:Name="__ReferenceID3">
+          <FlowStep x:Key="Add Vendor" x:Name="__ReferenceID3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">70,327</av:Point>
@@ -183,26 +183,89 @@
                 <av:PointCollection x:Key="ConnectorLocation">70,360 40,360 40,120 420,120</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="New Vendor Prompt" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="New Vendor Prompt" sap:VirtualizedContainerService.HintSize="454,2446" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="newVendor" />
+                <Variable x:TypeArguments="sd:DataTable" Name="vendorTable" />
+                <Variable x:TypeArguments="x:String" Name="anotherItem" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="333.6,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Vendor Name" Title="Vendor Information">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="412,238" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Vendor Name" Title="Vendor Information">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[newVendor]</OutArgument>
                 </ui:InputDialog.Result>
               </ui:InputDialog>
+              <ui:BuildDataTable DataTable="[vendorTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="412,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Item&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Vendor&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Stock&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Discount&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+              <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412,1822" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                <ui:InterruptibleDoWhile.Body>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,1657" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="item" />
+                      <Variable x:TypeArguments="x:Int32" Name="stock" />
+                      <Variable x:TypeArguments="x:Double" Name="discount" />
+                      <Variable x:TypeArguments="s:Object[]" Name="dataRow">
+                        <Variable.Default>
+                          <mva:VisualBasicValue x:TypeArguments="s:Object[]" ExpressionText="{}{}" />
+                        </Variable.Default>
+                      </Variable>
+                      <Variable x:TypeArguments="x:Double" Name="price" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="What is the name of the item for this vendor?" Title="Item Info">
+                      <ui:InputDialog.Result>
+                        <OutArgument x:TypeArguments="x:String">[item]</OutArgument>
+                      </ui:InputDialog.Result>
+                    </ui:InputDialog>
+                    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_6" IsPassword="False" Label="What is the price of this item?" Title="Price Info">
+                      <ui:InputDialog.Result>
+                        <OutArgument x:TypeArguments="x:Double">[price]</OutArgument>
+                      </ui:InputDialog.Result>
+                    </ui:InputDialog>
+                    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_7" IsPassword="False" Label="What is the stock of the item (enter a number)" Title="Stock info">
+                      <ui:InputDialog.Result>
+                        <OutArgument x:TypeArguments="x:Int32">[stock]</OutArgument>
+                      </ui:InputDialog.Result>
+                    </ui:InputDialog>
+                    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_8" IsPassword="False" Label="What is the current discount of this item? (as a decimal)" Title="Discount Info">
+                      <ui:InputDialog.Result>
+                        <OutArgument x:TypeArguments="x:Double">[discount]</OutArgument>
+                      </ui:InputDialog.Result>
+                    </ui:InputDialog>
+                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:Object[]">[dataRow]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:Object[]">[{item,newVendor,price,stock,discount}]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[dataRow]" DataTable="[vendorTable]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <ui:InputDialog Options="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,291" sap2010:WorkflowViewState.IdRef="InputDialog_9" IsPassword="False" Label="Do you want to add another item for this vendor?" OptionsString="Yes;No" Title="Another Item">
+                      <ui:InputDialog.Result>
+                        <OutArgument x:TypeArguments="x:String">[anotherItem]</OutArgument>
+                      </ui:InputDialog.Result>
+                    </ui:InputDialog>
+                  </Sequence>
+                </ui:InterruptibleDoWhile.Body>
+                <ui:InterruptibleDoWhile.Condition>
+                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="anotherItem = &quot;Yes&quot;" />
+                </ui:InterruptibleDoWhile.Condition>
+              </ui:InterruptibleDoWhile>
+              <ui:AppendRange DataTable="[vendorTable]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="412,115" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Inventory" WorkbookPath="C:\Revature\Rymarz_N-Wilson_D-p0\Vendors p0.xlsx" />
             </Sequence>
             <FlowStep.Next>
               <x:Reference>__ReferenceID0</x:Reference>
             </FlowStep.Next>
           </FlowStep>
-          <FlowStep x:Key="New Customer" x:Name="__ReferenceID2">
+          <FlowStep x:Key="Add Customer" x:Name="__ReferenceID2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">70,177</av:Point>
@@ -216,7 +279,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="333.6,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Customer Name" Title="Customer Information">
+              <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,238" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Customer Name" Title="Customer Information">
                 <ui:InputDialog.Result>
                   <OutArgument x:TypeArguments="x:String">[customerName]</OutArgument>
                 </ui:InputDialog.Result>
